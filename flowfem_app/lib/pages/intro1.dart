@@ -17,28 +17,28 @@ class Intro1 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start, // Aligns text to the left
                 children: [
-                  Center(
-                    child: Image.asset(
-                      'assets/images/intro_1.png', // Replace with actual image
-                      width: 300,
-                      height: 300,
-                    ),
-                  ),
+                //  Center(
+                //    child: Image.asset(
+                //      'assets/images/intro_1.png', // Replace with actual image
+                //     width: 300,
+                //      height: 300,
+                //  ),
+                //  ),
                   SizedBox(height: 20),
                   Align(
-                    alignment: Alignment.centerLeft, // Align text to the left
+                    alignment: Alignment.center, // Align text to the left
                     child: Padding(
                       padding: EdgeInsets.only(top: 20), // Add padding above the text
                       child: Text(
-                        " Welcome to\n FlowFem .",
+                        " Welcome to\n FemFlow .",
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           height: 1.1,
                           fontSize: 40,
                           fontWeight: FontWeight.w800,
-                          color: Colors.black87, // Adjust text color if needed
+                          color: const Color.fromARGB(221, 255, 255, 255), // Adjust text color if needed
                         ),
-                        textAlign: TextAlign.left,
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
