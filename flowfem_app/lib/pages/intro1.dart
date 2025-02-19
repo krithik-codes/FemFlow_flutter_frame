@@ -7,6 +7,7 @@ class Intro1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(255, 82, 82, 1),
       body: Column(
         children: [
           Expanded(
@@ -49,7 +50,7 @@ class Intro1 extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 40), // Adjust space from bottom
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(255, 82, 82, 1), // Button color
+                backgroundColor: const Color.fromARGB(255, 255, 255, 255), // Button color
                 padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15), // Button size
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20), // Rounded corners
@@ -61,25 +62,14 @@ class Intro1 extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Intro2()), // Navigate to next page
                 );
               },
-              child: Row(
-                mainAxisSize: MainAxisSize.min, // Keeps row as small as possible
-                children: [
-                  Text(
-                    "Next",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white, // Text color
-                    ),
-                  ),
-                  SizedBox(width: 10), // Space between text and arrow
-                  Image.asset(
-                    'assets/icons/arrow.png', // Replace with actual arrow image path
-                    width: 20, // Adjust size if needed
-                    height: 20,
-                  ),
-                ],
+              child: Text(
+                "Next",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromRGBO(255, 82, 82, 1), // Text color
+                ),
               ),
             ),
           ),
