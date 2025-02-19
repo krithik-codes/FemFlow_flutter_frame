@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'intro2.dart'; // Import the next page
+import 'intro1next.dart'; // Import the next page
 
 class Intro1 extends StatelessWidget {
   const Intro1({super.key});
@@ -35,7 +35,7 @@ class Intro1 extends StatelessWidget {
                           fontFamily: 'Poppins',
                           height: 1.1,
                           fontSize: 40,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w400,
                           color: const Color.fromARGB(221, 255, 255, 255), // Adjust text color if needed
                         ),
                         textAlign: TextAlign.center,
@@ -59,7 +59,7 @@ class Intro1 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Intro2()), // Navigate to next page
+                  MaterialPageRoute(builder: (context) => Intro1Next()), // Navigate to next page
                 );
               },
               child: Text(
