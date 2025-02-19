@@ -133,7 +133,7 @@ class _TrackPageState extends State<TrackPage> {
                 "${DateFormat.yMMMd().format(nextCycleStart!)}",
                 style: TextStyle(fontSize: 16, color: Colors.grey[700]),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 1),
               Text(
                 "Expected Periods dates: ${DateFormat.yMMMd().format(predictionRange.first)} - ${DateFormat.yMMMd().format(predictionRange.last)}",
                 style: TextStyle(fontSize: 16, color: Colors.grey[700]),

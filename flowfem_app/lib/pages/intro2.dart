@@ -18,8 +18,12 @@ class Intro2 extends StatelessWidget {
               Center(
                 child: Text(
                   'What should we call you?',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, color: Color(0xFFFF5252)),
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 40, 
+                    fontWeight: FontWeight.w600, 
+                    color: Color(0xFFFF5252)),
+                    
                 ),
               ),
               SizedBox(height: 20),
@@ -33,7 +37,7 @@ class Intro2 extends StatelessWidget {
               ),
               SizedBox(height: 100), // Spacer to push arrow button towards the mid-end
               Padding(
-                padding: const EdgeInsets.only(bottom: 40.0),
+                padding: const EdgeInsets.only(bottom: 3.0),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
