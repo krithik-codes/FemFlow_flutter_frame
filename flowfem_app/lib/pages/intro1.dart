@@ -75,9 +75,9 @@ class Intro1 extends StatelessWidget {
                   ),
                   SizedBox(width: 10), // Space between text and arrow
                   Image.asset(
-                    'assets/images/arrow-right.svg', // Replace with actual arrow image path
-                    width: 10, // Adjust size if needed
-                    height: 10,
+                    'assets/icons/arrow.png', // Replace with actual arrow image path
+                    width: 20, // Adjust size if needed
+                    height: 20,
                   ),
                 ],
               ),
