@@ -1,96 +1,57 @@
 import 'package:flutter/material.dart';
-
-class Intro3 extends StatefulWidget {
+import 'mainhome.dart';
+class Intro3 extends StatelessWidget {
   const Intro3({super.key});
-
-  @override
-  _Intro3State createState() => _Intro3State();
-}
-
-class _Intro3State extends State<Intro3> {
-  int selectedAge = 18; // Default age
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFF1F3), // Light pink background
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "What's your age?",
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 32,
-                fontWeight: FontWeight.w700,
-                color: Colors.black87,
-              ),
-            ),
-            SizedBox(height: 30),
-            
-            // Age Picker (Dropdown)
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.grey.shade300),
-              ),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton<int>(
-                  value: selectedAge,
-                  items: List.generate(51, (index) {
-                    int age = index + 10;
-                    return DropdownMenuItem(
-                      value: age,
-                      child: Text(
-                        age.toString(),
-                        style: TextStyle(fontSize: 18),
-                      ),
-                    );
-                  }),
-                  onChanged: (value) {
-                    setState(() {
-                      selectedAge = value!;
-                    });
-                  },
-                  isExpanded: true,
-                ),
-              ),
-            ),
-            
-            SizedBox(height: 50),
-
-            // Submit Button
-            Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromRGBO(255, 82, 82, 1),
-                  padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-                onPressed: () {
-                  // Save age and navigate to the next page
-                  print("Selected Age: $selectedAge"); // Debugging log
-                  // Add navigation to the next page if needed
-                },
+      appBar: AppBar(
+        title: Text(''),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
                 child: Text(
-                  "Submit",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  'Age',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, color: Color(0xFFFF5252)),
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: 20),
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  ),
+                  labelText: 'Enter your age',
+                ),
+              ),
+              SizedBox(height: 100), // Spacer to push arrow button towards the mid-end
+              Padding(
+                padding: const EdgeInsets.only(bottom: 40.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MainHome()),
+                    );
+                    // Add navigation or action for the next page here
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(),
+                    padding: EdgeInsets.all(16),
+                    backgroundColor: Color(0xFFFF5252),
+                  ),
+                  child: Icon(Icons.arrow_forward, color: Colors.white),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
