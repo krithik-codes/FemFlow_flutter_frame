@@ -10,24 +10,36 @@ class Intro1 extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30), // Add padding for better alignment
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start, // Aligns text to the left
                 children: [
-                  Image.asset(
-                    'assets/images/intro_1.png', // Replace with actual image
-                    width: 300,
-                    height: 300,
+                  Center(
+                    child: Image.asset(
+                      'assets/images/intro_1.png', // Replace with actual image
+                      width: 300,
+                      height: 300,
+                    ),
                   ),
                   SizedBox(height: 20),
-                  Text(
-                    "Welcome to Women's Wellness App",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87, // Adjust text color if needed
+                  Align(
+                    alignment: Alignment.centerLeft, // Align text to the left
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 20), // Add padding above the text
+                      child: Text(
+                        " Welcome to\n FlowFem .",
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          height: 1.1,
+                          fontSize: 40,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.black87, // Adjust text color if needed
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
@@ -40,8 +52,7 @@ class Intro1 extends StatelessWidget {
                 backgroundColor: const Color.fromRGBO(255, 82, 82, 1), // Button color
                 padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15), // Button size
                 shape: RoundedRectangleBorder(
-                  
-                  borderRadius: BorderRadius.circular(30), // Rounded corners
+                  borderRadius: BorderRadius.circular(20), // Rounded corners
                 ),
               ),
               onPressed: () {
@@ -50,13 +61,25 @@ class Intro1 extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Intro2()), // Navigate to next page
                 );
               },
-              child: Text(
-                "Next",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white, // Text color
-                ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min, // Keeps row as small as possible
+                children: [
+                  Text(
+                    "Next",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white, // Text color
+                    ),
+                  ),
+                  SizedBox(width: 10), // Space between text and arrow
+                  Image.asset(
+                    'assets/images/arrow-right.svg', // Replace with actual arrow image path
+                    width: 10, // Adjust size if needed
+                    height: 10,
+                  ),
+                ],
               ),
             ),
           ),
