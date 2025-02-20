@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'mainhome.dart';
+import 'globals.dart';
 class Intro3 extends StatelessWidget {
   const Intro3({super.key});
 
@@ -17,9 +18,9 @@ class Intro3 extends StatelessWidget {
             children: [
               Center(
                 child: Text(
-                  'Age',
+                  "Hello $userName! \n Age ?",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, color: Color(0xFFFF5252)),
+                  style: TextStyle(fontSize: 45, fontWeight: FontWeight.w700, color: Color(0xFFFF5252)),
                 ),
               ),
               SizedBox(height: 20),
@@ -33,7 +34,7 @@ class Intro3 extends StatelessWidget {
               ),
               SizedBox(height: 100), // Spacer to push arrow button towards the mid-end
               Padding(
-                padding: const EdgeInsets.only(bottom: 40.0),
+                padding: const EdgeInsets.only(bottom: 20.0),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(

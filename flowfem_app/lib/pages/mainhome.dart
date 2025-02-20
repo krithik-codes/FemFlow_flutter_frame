@@ -12,7 +12,7 @@ class MainHome extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "FemFlow",
-          style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.bold),
+          style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w500,color: Colors.white),
         ),
         backgroundColor: const Color(0xFFFF5252),
         centerTitle: true,

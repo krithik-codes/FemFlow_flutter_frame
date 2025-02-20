@@ -10,61 +10,66 @@ class FoodPage extends StatefulWidget {
 class _FoodPageState extends State<FoodPage> {
   String? selectedSymptom;
   final Map<String, List<Map<String, String>>> foodSuggestions = {
-    "Nausea": [
-      {"food": "Ginger Tea", "benefit": "Helps reduce nausea and improves digestion."},
-      {"food": "Bananas", "benefit": "Easy on the stomach and provides energy."},
-      {"food": "Peppermint Tea", "benefit": "Soothes the stomach and relieves nausea."},
-      {"food": "Crackers", "benefit": "Light and easy to digest, reducing nausea."},
-      {"food": "Lemon Water", "benefit": "The citrus scent and vitamin C help ease nausea."},
-      {"food": "Rice", "benefit": "A bland food that is easy on the stomach."}
-    ],
     "Cramps": [
       {"food": "Dark Chocolate", "benefit": "Rich in magnesium, which helps relax muscles."},
-      {"food": "Spinach", "benefit": "Contains iron and magnesium to reduce cramping."},
-      {"food": "Avocado", "benefit": "High in potassium, reducing muscle cramps."},
-      {"food": "Walnuts", "benefit": "Contains omega-3 to fight inflammation."},
+      {"food": "Bananas", "benefit": "Contain potassium to prevent muscle contractions."},
+      {"food": "Ginger Tea", "benefit": "Reduces inflammation and helps with pain relief."},
       {"food": "Yogurt", "benefit": "Rich in calcium, which may reduce muscle pain."},
       {"food": "Pumpkin Seeds", "benefit": "Packed with magnesium to relax muscles."}
     ],
+    "Lower Back Pain": [
+      {"food": "Turmeric Milk", "benefit": "Curcumin helps reduce inflammation and pain."},
+      {"food": "Salmon", "benefit": "Rich in omega-3 fatty acids to ease inflammation."},
+      {"food": "Almonds", "benefit": "Contain magnesium to help muscle relaxation."}
+    ],
+    "Abdominal Pain": [
+      {"food": "Ginger Tea", "benefit": "Aids digestion and soothes abdominal discomfort."},
+      {"food": "Papaya", "benefit": "Contains enzymes that ease digestion and bloating."},
+      {"food": "Chamomile Tea", "benefit": "Has anti-inflammatory properties that relax muscles."}
+    ],
+    "Pelvic Pain": [
+      {"food": "Flaxseeds", "benefit": "Rich in omega-3, helping reduce inflammation."},
+      {"food": "Leafy Greens", "benefit": "Provide iron and magnesium to reduce pain."}
+    ],
     "Heavy Cramps": [
-      {"food": "Chamomile Tea", "benefit": "Has anti-inflammatory properties that help with pain relief."},
-      {"food": "Salmon", "benefit": "Rich in omega-3 fatty acids to reduce inflammation."},
-      {"food": "Turmeric", "benefit": "Contains curcumin to fight inflammation."},
       {"food": "Chia Seeds", "benefit": "Loaded with anti-inflammatory properties."},
-      {"food": "Papaya", "benefit": "Helps regulate blood flow and ease cramps."},
-      {"food": "Flaxseeds", "benefit": "Reduce period pain through hormone regulation."}
+      {"food": "Turmeric", "benefit": "Contains curcumin, which reduces inflammation."}
     ],
-    "Back Pain": [
-      {"food": "Almonds", "benefit": "Rich in calcium and magnesium for muscle relaxation."},
-      {"food": "Turmeric Milk", "benefit": "Contains curcumin, which reduces inflammation and pain."},
-      {"food": "Berries", "benefit": "Packed with antioxidants that reduce inflammation."},
-      {"food": "Green Tea", "benefit": "Has anti-inflammatory benefits to ease pain."},
-      {"food": "Sweet Potatoes", "benefit": "Rich in fiber and vitamins to reduce inflammation."},
-      {"food": "Carrots", "benefit": "Contain beta-carotene, which reduces muscle pain."}
+    "Leg Pain": [
+      {"food": "Avocados", "benefit": "Rich in potassium to prevent muscle cramps."},
+      {"food": "Coconut Water", "benefit": "Hydrates and replenishes electrolytes."}
     ],
-    "Fatigue": [
-      {"food": "Oatmeal", "benefit": "Provides slow-releasing energy to fight fatigue."},
-      {"food": "Eggs", "benefit": "High in protein and iron to boost energy levels."},
-      {"food": "Lentils", "benefit": "Rich in iron to combat fatigue and weakness."},
-      {"food": "Dark Leafy Greens", "benefit": "Help restore iron levels and prevent fatigue."},
-      {"food": "Chia Seeds", "benefit": "Provide long-lasting energy and hydration."},
-      {"food": "Oranges", "benefit": "High in vitamin C to reduce fatigue and boost energy."}
+    "Headaches": [
+      {"food": "Watermelon", "benefit": "Hydrates the body to prevent headaches."},
+      {"food": "Spinach", "benefit": "Contains magnesium, reducing headache severity."}
     ],
-    "Bloating": [
-      {"food": "Cucumber", "benefit": "Has a high water content that reduces bloating."},
-      {"food": "Fennel Seeds", "benefit": "Help with digestion and reduce bloating."},
-      {"food": "Watermelon", "benefit": "Hydrating and flushes out excess salt."},
-      {"food": "Ginger", "benefit": "Aids digestion and relieves bloating."},
-      {"food": "Pineapple", "benefit": "Contains bromelain, which aids digestion."},
-      {"food": "Celery", "benefit": "Has diuretic properties that reduce bloating."}
+    "Joint Pain": [
+      {"food": "Olive Oil", "benefit": "Contains anti-inflammatory properties to ease joint pain."},
+      {"food": "Walnuts", "benefit": "Rich in omega-3 to reduce inflammation."}
     ],
-    "Mood Swings": [
-      {"food": "Dark Chocolate", "benefit": "Boosts serotonin levels, improving mood."},
-      {"food": "Walnuts", "benefit": "Rich in omega-3s to support brain health."},
-      {"food": "Bananas", "benefit": "Contain dopamine, a natural mood booster."},
-      {"food": "Greek Yogurt", "benefit": "Supports gut health, which affects mood."},
-      {"food": "Berries", "benefit": "Packed with antioxidants that enhance mood."},
-      {"food": "Spinach", "benefit": "High in folate, which improves mental well-being."}
+    "Breast Tenderness": [
+      {"food": "Flaxseeds", "benefit": "Regulates hormones and reduces breast pain."},
+      {"food": "Soy", "benefit": "Contains phytoestrogens that help with hormonal balance."}
+    ],
+    "Hip Pain": [
+      {"food": "Pineapple", "benefit": "Contains bromelain, which reduces inflammation."},
+      {"food": "Turmeric", "benefit": "Reduces inflammation and eases pain."}
+    ],
+    "Nerve Pain": [
+      {"food": "Salmon", "benefit": "Rich in omega-3 fatty acids to improve nerve function."},
+      {"food": "Eggs", "benefit": "Contain vitamin B12, which supports nerve health."}
+    ],
+    "Rectal Pain": [
+      {"food": "Fiber-Rich Foods", "benefit": "Help ease bowel movements and reduce pain."},
+      {"food": "Prunes", "benefit": "Aid digestion and prevent constipation."}
+    ],
+    "Ovarian Pain": [
+      {"food": "Turmeric Tea", "benefit": "Has curcumin, which reduces inflammation."},
+      {"food": "Berries", "benefit": "Packed with antioxidants to fight inflammation."}
+    ],
+    "Stomach Pain with Nausea": [
+      {"food": "Peppermint Tea", "benefit": "Soothes nausea and relieves stomach pain."},
+      {"food": "Crackers", "benefit": "Easy to digest and settle the stomach."}
     ]
   };
 

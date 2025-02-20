@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'globals.dart'; // Import the global variable file
 import 'intro3.dart';
-class Intro2 extends StatelessWidget {
+
+class Intro2 extends StatefulWidget {
   const Intro2({super.key});
+
+  @override
+  State<Intro2> createState() => _Intro2State();
+}
+
+class _Intro2State extends State<Intro2> {
+  TextEditingController _nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +31,13 @@ class Intro2 extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 40, 
                     fontWeight: FontWeight.w600, 
-                    color: Color(0xFFFF5252)),
-                    
+                    color: Color(0xFFFF5252)
+                  ),
                 ),
               ),
               SizedBox(height: 20),
               TextField(
+                controller: _nameController, // Capture the user's input
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -35,11 +45,14 @@ class Intro2 extends StatelessWidget {
                   labelText: 'Your Name',
                 ),
               ),
-              SizedBox(height: 100), // Spacer to push arrow button towards the mid-end
+              SizedBox(height: 100), 
               Padding(
                 padding: const EdgeInsets.only(bottom: 3.0),
                 child: ElevatedButton(
                   onPressed: () {
+                    setState(() {
+                      userName = _nameController.text; // Store the name globally
+                    });
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Intro3()),
@@ -60,4 +73,3 @@ class Intro2 extends StatelessWidget {
     );
   }
 }
-
